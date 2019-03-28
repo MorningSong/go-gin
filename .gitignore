@@ -10,3 +10,4 @@ docs/*
 
 Gopkg.lock
 vendor
+.vendor-new/
