@@ -26,7 +26,7 @@ func InitRouter() *gin.Engine {
 	r := gin.New()
 
  	r.Use(gin.Logger())
-	r.Use(middleware.CORSMiddleware())
+	r.Use(cors.CORSMiddleware())
 	r.Use(gin.Recovery())
 	gin.SetMode(setting.ServerSetting.RunMode)
 
@@ -39,7 +39,7 @@ func InitRouter() *gin.Engine {
 	r.POST("/upload", api.UploadImage)
 
 	apiv1 := r.Group("/api/v1")
-	apiv1.Use(middleware.LimitMiddleware())
+	apiv1.Use(limit.LimitMiddleware())
 	apiv1.Use(jwt.JWT())
 	{
 		//获取标签列表
