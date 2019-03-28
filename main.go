@@ -10,6 +10,7 @@ import (
 	"github.com/MorningSong/go-gin/models"
 	"github.com/MorningSong/go-gin/pkg/logging"
 	"github.com/MorningSong/go-gin/pkg/gredis"
+	"github.com/MorningSong/go-gin/cronjob"
 )
 
 func init() {
@@ -17,6 +18,7 @@ func init() {
 	models.Setup()
 	logging.Setup()
 	gredis.Setup()
+	cronjob.Setup()
 }
 
 // @title Golang Gin API
