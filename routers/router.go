@@ -1,6 +1,8 @@
 package routers
 
 import (
+	"go-gin/.vendor-new/github.com/swaggo/gin-swagger"
+	"go-gin/middleware/cors"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,6 +12,8 @@ import (
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 
 	"github.com/MorningSong/go-gin/middleware/jwt"
+	"github.com/MorningSong/go-gin/middleware/cors"
+	"github.com/MorningSong/go-gin/middleware/limit"
 	"github.com/MorningSong/go-gin/pkg/export"
 	"github.com/MorningSong/go-gin/pkg/qrcode"
 	"github.com/MorningSong/go-gin/pkg/setting"
@@ -21,8 +25,8 @@ import (
 func InitRouter() *gin.Engine {
 	r := gin.New()
 
-	r.Use(gin.Logger())
-
+ 	r.Use(gin.Logger())
+	r.Use(cors.CORSMiddleware())
 	r.Use(gin.Recovery())
 	gin.SetMode(setting.ServerSetting.RunMode)
 
@@ -35,6 +39,7 @@ func InitRouter() *gin.Engine {
 	r.POST("/upload", api.UploadImage)
 
 	apiv1 := r.Group("/api/v1")
+	apiv1.Use(limit.LimitMiddleware())
 	apiv1.Use(jwt.JWT())
 	{
 		//获取标签列表

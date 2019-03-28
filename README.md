@@ -12,3 +12,5 @@
 - App configurable
 - Cron
 - Redis
+- Request Limit
+- Request Cross Domain

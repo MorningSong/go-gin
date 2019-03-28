@@ -13,7 +13,7 @@ lint:
 	golint ./...
 
 clean:
-	rm -rf go-gin-example
+	rm -rf go-gin
 	go clean -i .
 
 help:
