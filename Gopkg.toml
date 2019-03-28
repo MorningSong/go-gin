@@ -85,6 +85,10 @@
   name = "github.com/tealeg/xlsx"
   version = "1.0.3"
 
+[[constraint]]
+  branch = "master"
+  name = "github.com/yangwenmai/ratelimit"
+
 [prune]
   go-tests = true
   unused-packages = true

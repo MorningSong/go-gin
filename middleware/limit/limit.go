@@ -1,12 +1,11 @@
 package middleware
 
 import (
-	"time"
-	"net/http"
-	"github.com/dgrijalva/jwt-go"
-	"github.com/gin-gonic/gin"
 	"github.com/MorningSong/go-gin/pkg/e"
+	"github.com/gin-gonic/gin"
 	"github.com/yangwenmai/ratelimit/simpleratelimit"
+	"net/http"
+	"time"
 )
 
 var (
