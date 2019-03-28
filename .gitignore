@@ -4,3 +4,9 @@
 runtime/*
 !runtime/qrcode/bg.jpg
 !runtime/fonts
+
+docs/*
+!docs/sql
+
+Gopkg.lock
+vendor
