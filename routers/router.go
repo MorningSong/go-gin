@@ -1,19 +1,15 @@
 package routers
 
 import (
-	"go-gin/.vendor-new/github.com/swaggo/gin-swagger"
-	"go-gin/middleware/cors"
 	"net/http"
-
 	"github.com/gin-gonic/gin"
 
 	_ "github.com/MorningSong/go-gin/docs"
 	"github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
-
 	"github.com/MorningSong/go-gin/middleware/jwt"
-	"github.com/MorningSong/go-gin/middleware/cors"
-	"github.com/MorningSong/go-gin/middleware/limit"
+	cors "github.com/MorningSong/go-gin/middleware/cors"
+	limit "github.com/MorningSong/go-gin/middleware/limit"
 	"github.com/MorningSong/go-gin/pkg/export"
 	"github.com/MorningSong/go-gin/pkg/qrcode"
 	"github.com/MorningSong/go-gin/pkg/setting"

@@ -7,15 +7,19 @@ import (
 	"time"
 )
 
-func Setup()  {
+func Setup() {
+	go Run()
+}
+
+func Run()  {
 	log.Println("Run Cronjob.cron.Setup...")
 
 	c := cron.New()
-	c.AddFunc("* * * * * *", func() {
+	c.AddFunc("*/30 * * * * *", func() {
 		log.Println("Run models.CleanAllTag...")
 		models.CleanAllTag()
 	})
-	c.AddFunc("* * * * * *", func() {
+	c.AddFunc("*/30 * * * * *", func() {
 		log.Println("Run models.CleanAllArticle...")
 		models.CleanAllArticle()
 	})
